@@ -50,7 +50,7 @@ public:
     virtual uint32_t    sampleRate() const { return 44100; }
     virtual size_t      bufferSize() const { return 4096; }
     virtual uint32_t    channels() const { return AudioSystem::CHANNEL_OUT_STEREO; }
-    virtual int         format() const { return AudioSystem::PCM_16_BIT; }
+    virtual uint32_t    format() const { return AudioSystem::PCM_16_BIT; }
     virtual uint32_t    latency() const { return 20; }
     virtual status_t    setVolume(float left, float right) { return INVALID_OPERATION; }
     virtual ssize_t     write(const void* buffer, size_t bytes);
@@ -84,7 +84,7 @@ public:
     virtual uint32_t    sampleRate() const { return 8000; }
     virtual size_t      bufferSize() const { return 320; }
     virtual uint32_t    channels() const { return AudioSystem::CHANNEL_IN_MONO; }
-    virtual int         format() const { return AudioSystem::PCM_16_BIT; }
+    virtual uint32_t    format() const { return AudioSystem::PCM_16_BIT; }
     virtual status_t    setGain(float gain) { return INVALID_OPERATION; }
     virtual ssize_t     read(void* buffer, ssize_t bytes);
     virtual status_t    dump(int fd, const Vector<String16>& args);

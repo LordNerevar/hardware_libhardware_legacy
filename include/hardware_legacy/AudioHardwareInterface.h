@@ -66,7 +66,7 @@ public:
      * return audio format in 8bit or 16bit PCM format -
      * eg. AudioSystem:PCM_16_BIT
      */
-    virtual int         format() const = 0;
+    virtual uint32_t    format() const = 0;
 
     /**
      * return the frame size (number of bytes per sample).
@@ -156,7 +156,7 @@ public:
      * return audio format in 8bit or 16bit PCM format -
      * eg. AudioSystem:PCM_16_BIT
      */
-    virtual int         format() const = 0;
+    virtual uint32_t    format() const = 0;
 
     /**
      * return the frame size (number of bytes per sample).
@@ -262,7 +262,7 @@ public:
     /** This method creates and opens the audio hardware output stream */
     virtual AudioStreamOut* openOutputStream(
                                 uint32_t devices,
-                                int *format=0,
+                                uint32_t *format=0,
                                 uint32_t *channels=0,
                                 uint32_t *sampleRate=0,
                                 status_t *status=0) = 0;
@@ -271,7 +271,7 @@ public:
     /** This method creates and opens the audio hardware input stream */
     virtual AudioStreamIn* openInputStream(
                                 uint32_t devices,
-                                int *format,
+                                uint32_t *format,
                                 uint32_t *channels,
                                 uint32_t *sampleRate,
                                 status_t *status,

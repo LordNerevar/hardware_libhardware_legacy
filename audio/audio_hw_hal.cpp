@@ -525,7 +525,7 @@ static int adev_open_output_stream(struct audio_hw_device *dev,
     devices = convert_audio_device(devices, HAL_API_REV_2_0, HAL_API_REV_1_0);
 
 #ifndef ICS_AUDIO_BLOB
-    out->legacy_out = ladev->hwif->openOutputStream(devices, (int *) &config->format,
+    out->legacy_out = ladev->hwif->openOutputStream(devices, &config->format,
                                                     &config->channel_mask,
                                                     &config->sample_rate, &status);
 #else
@@ -602,7 +602,7 @@ static int adev_open_input_stream(struct audio_hw_device *dev,
     devices = convert_audio_device(devices, HAL_API_REV_2_0, HAL_API_REV_1_0);
 
 #ifndef ICS_AUDIO_BLOB
-    in->legacy_in = ladev->hwif->openInputStream(devices, (int *) &config->format,
+    in->legacy_in = ladev->hwif->openInputStream(devices, &config->format,
                                                  &config->channel_mask, &config->sample_rate,
                                                  &status, (AudioSystem::audio_in_acoustics)0);
 #else
